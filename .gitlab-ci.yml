@@ -1,6 +1,7 @@
 stages:
   - test
   - build
+  - deploy
 
 test project:
   stage: test
@@ -16,4 +17,10 @@ build project:
     - npm install
     - npm run build
 
+deploy project:
+  stage: deploy
+  image: node:16
+  script:
+    - heroku create
+    - git push heroku main
 
