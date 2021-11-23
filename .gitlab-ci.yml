@@ -16,6 +16,9 @@ build project:
   script:
     - npm install
     - npm run build
+  artifacts:
+    paths:
+      - build/
 
 deploy project:
   stage: deploy
