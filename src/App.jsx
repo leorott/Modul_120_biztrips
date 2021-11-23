@@ -35,7 +35,9 @@ export default function App() {
               </button>
             </div>
           </figcaption>
+
         </figure>
+
       </div>
     );
   }
@@ -50,6 +52,12 @@ export default function App() {
   // shorthand for react fragment
   return (
     <>
+      <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+      >Learn React</a>
       <div>
         <Header />
         <main>
@@ -78,9 +86,12 @@ export default function App() {
                 {" " + months[month]}
               </h2>
             )}
+
           </section>
           <section id="products">{filteredTrips.map(renderTrip)}</section>
+
         </main>
+
       </div>
       <Footer />
     </>
