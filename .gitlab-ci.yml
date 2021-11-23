@@ -17,10 +17,11 @@ build project:
     - npm install
     - npm run build
 
-#deploy project:
-#  stage: deploy
-#  image: node:16
-#  script:
-#    - heroku create
-#    - git push heroku main
+deploy project:
+  stage: deploy
+  image: node:16
+  script:
+    - sudo snap install --classic heroku
+    - heroku create
+    - git push heroku main
 
