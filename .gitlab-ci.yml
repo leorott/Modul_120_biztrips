@@ -21,7 +21,7 @@ deploy project:
   stage: deploy
   image: node:16
   script:
-    - sudo snap install --classic heroku
-    - heroku create
-    - git push heroku main
+    - npm install -g netlify-cli
+    - netlify deploy --dir=build --prod
+
 
