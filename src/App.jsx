@@ -52,12 +52,7 @@ export default function App() {
   // shorthand for react fragment
   return (
     <>
-      <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-      >Learn React</a>
+
       <div>
         <Header />
         <main>
