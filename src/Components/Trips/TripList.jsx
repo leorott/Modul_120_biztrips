@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 
-import { getBusinessTrips } from "./tripsService.js";
+import { getBusinessTrips } from "../../services/tripsService.js";
 
 // functional component TripList, deconstruct props!
 function TripList({ dispatch }) {
