@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 import Spinner from "../Spinner";
 import useFetch from "../../services/useFetch";
 import * as Icon from 'react-bootstrap-icons';
-import {getBusinessTrips} from "../../services/tripsService";
+import {Link} from "react-router-dom";
 
 export default function Trips() {
-    const [filterByMonth, setFilterByMonth] = useState("");
-    const [filteredTrips, setFilteredTrips] = useState([])
+    const baseUrl = process.env.REACT_APP_API_BASE_URL;
     const {data: trips, loading: loadingTrips, error: errorTrips} = useFetch("trips");
     const {data: wishlist, loading: loadingWishlist, error: errorWishlist} = useFetch("wishlist");
+    const [filteredTrips, setFilteredTrips] = useState([])
+    const [filterByMonth, setFilterByMonth] = useState("");
     const [filterByWishlist, setFilterByWishlist] = useState(false)
 
     const months = ["Idle", "Jan", "Feb", "March", "April", "Mai", "June"];
@@ -41,6 +42,29 @@ export default function Trips() {
     if (loadingTrips) return <Spinner/>;
     // shorthand for react fragment
 
+    async function updateWishlist(trip) {
+        /*
+        if (wishlist.includes(trip.id)){
+            return fetch(baseUrl + "wishlist", {
+                method: "DELETE",
+                headers: {"Content-Type": "application/json",},
+                body: [JSON.stringify(trip.id)],
+            });
+        }
+        else {
+
+            return fetch(baseUrl + "wishlist", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: [JSON.stringify(trip.id)],
+            });
+        }
+
+         */
+    }
+
     function renderTrip(trip) {
         return (
             <div className="col" key={trip.id}>
@@ -52,8 +76,11 @@ export default function Trips() {
                                 <Icon.GeoFill/>
                                 <small>{trip.destination}</small>
                             </li>
-                            <li className="d-flex align-items-center me-3">
+                            <li className="d-flex align-items-center me-3" onClick={() => updateWishlist(trip)}>
                                 {wishlist.includes(trip.id) ? <Icon.HeartFill size={20}/> :  <Icon.Heart size={20} />}
+                            </li>
+                            <li className="d-flex align-items-center me-3">
+                                <Link to={`/trips/${trip.id}`} className="btn btn-primary">Show Details</Link>
                             </li>
                         </ul>
                     </div>
@@ -67,7 +94,7 @@ export default function Trips() {
                 <main>
                     <section id="filters">
                         <div className="container">
-                            <label htmlFor="month">Filter by Month:</label>
+                            <label htmlFor="month">Filter by Month</label>
                             <select id="month"
                                     value={filterByMonth}
                                     onChange={(e) => {
@@ -82,8 +109,6 @@ export default function Trips() {
                                 <option value="5">Mai</option>
                                 <option value="6">June</option>
                             </select>
-                            {filteredTrips && filteredTrips[0] ? null : <p>No Trips in {months[filterByMonth]}</p>}
-
                             <label htmlFor="filterWishlist">Wishlist</label>
                             <input type={"checkbox"} id={"filterWishlist"} onChange={(e) => {setFilterByWishlist(e.target.checked);}}/>
                         </div>
