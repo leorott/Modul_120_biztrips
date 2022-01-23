@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const baseUrl = process.env.REACT_APP_API_BASE_URL;
 
 export default function useFetch(url) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
