@@ -11,8 +11,19 @@ export default function Trips() {
     const [filteredTrips, setFilteredTrips] = useState([])
     const [filterByMonth, setFilterByMonth] = useState("");
     const [filterByWishlist, setFilterByWishlist] = useState(false)
+    const [wishlistArray, setWishlistArray] = useState([]);
 
     const months = ["Idle", "Jan", "Feb", "March", "April", "Mai", "June"];
+    useEffect(() => {
+        const arr = []
+        if (!loadingWishlist && wishlist && wishlist[0]){
+            wishlist.forEach(li => {
+                arr.push(li.tripId)
+            })
+        }
+        console.log('arr', arr)
+        setWishlistArray(arr)
+    }, [wishlist, loadingWishlist]);
 
     useEffect(() => {
         setFilteredTrips(trips)
@@ -26,11 +37,11 @@ export default function Trips() {
         if (filterByMonth !== "" && filterByWishlist){
             setFilteredTrips(trips
                 .filter((trip) => trip.startTrip[1] === parseInt(filterByMonth))
-                .filter((trip) => wishlist.includes(trip.id) ? trip : null))
+                .filter((trip) => wishlistArray.includes(trip.id) ? trip : null))
         }
         if (filterByMonth === "" && filterByWishlist){
             setFilteredTrips(trips
-                .filter((trip) => wishlist.includes(trip.id) ? trip : null))
+                .filter((trip) => wishlistArray.includes(trip.id) ? trip : null))
         }
         if (filterByMonth === "" && !filterByWishlist){
             setFilteredTrips(trips)
@@ -43,26 +54,27 @@ export default function Trips() {
     // shorthand for react fragment
 
     async function updateWishlist(trip) {
-        /*
-        if (wishlist.includes(trip.id)){
+        console.log('here')
+        if (wishlistArray.includes(trip.id)) {
+            console.log('delete')
             return fetch(baseUrl + "wishlist", {
                 method: "DELETE",
-                headers: {"Content-Type": "application/json",},
-                body: [JSON.stringify(trip.id)],
+                headers: {"Content-Type": "application/json"},
+                body: [JSON.stringify({
+                    tripId: trip.id
+                })],
             });
         }
-        else {
-
+    else {
+        console.log('create')
             return fetch(baseUrl + "wishlist", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: [JSON.stringify(trip.id)],
+                headers: {"Content-Type": "application/json"},
+                body: [JSON.stringify({
+                    tripId: trip.id
+                })],
             });
         }
-
-         */
     }
 
     function renderTrip(trip) {
@@ -77,7 +89,7 @@ export default function Trips() {
                                 <small>{trip.destination}</small>
                             </li>
                             <li className="d-flex align-items-center me-3" onClick={() => updateWishlist(trip)}>
-                                {wishlist.includes(trip.id) ? <Icon.HeartFill size={20}/> :  <Icon.Heart size={20} />}
+                                {wishlistArray.includes(trip.id) ? <Icon.HeartFill size={20}/> :  <Icon.Heart size={20} />}
                             </li>
                             <li className="d-flex align-items-center me-3">
                                 <Link to={`/trips/${trip.id}`} className="btn btn-primary">Show Details</Link>
