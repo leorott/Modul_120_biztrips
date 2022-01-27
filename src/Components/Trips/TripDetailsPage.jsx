@@ -39,6 +39,10 @@ export default function TripDetailsPage(){
                             <p>{`${trip.endTrip[2]}.${trip.endTrip[1]} ${trip.endTrip[0]} at ${trip.endTrip[3]}:${trip.endTrip[4]}`}</p>
                         </div>
                     </div>
+                        <div className="col-md">
+                            <img src={`${window.location.origin}/images/items/${trip.id}.jpg`} className="img-fluid" style={{}}/>
+                        </div>
+
                 </div>
             ))}
         </div>
