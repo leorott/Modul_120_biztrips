@@ -93,15 +93,15 @@ export default function Trips() {
     function renderTrip(trip) {
         return (
             <div className="col" key={trip.id}>
-                <div className="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style={{backgroundImage: `url(images/items/${trip.id}.jpg)`, backgroundRepeat: 'no-repeat'}}>
-                    <div className="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
+                <div className="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style={{backgroundImage: `url(images/items/${trip.id}.jpg)`, backgroundRepeat: 'no-repeat',backgroundSize: 'cover'}}>
+                    <div className="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1 text">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{trip.title}</h2>
                         <ul className="d-flex list-unstyled mt-auto">
                             <li className="d-flex align-items-center me-3">
                                 <Icon.GeoFill/>
                                 <small>{trip.destination}</small>
                             </li>
-                            <li className="d-flex align-items-center me-3" onClick={() => updateWishlist(trip)}>
+                            <li className="btn btn-dark me-3" onClick={() => updateWishlist(trip)}>
                                 {wishlistArray.includes(trip.id) ? <Icon.HeartFill size={20}/> :  <Icon.Heart size={20} />}
                             </li>
                             <li className="d-flex align-items-center me-3">
