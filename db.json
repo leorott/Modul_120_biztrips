@@ -4,146 +4,49 @@
       "id": 1,
       "title": "World Trade Center",
       "description": "San Francisco World Trade Center on new Server/IOT/Client ",
-      "startTrip": [
-        2021,
-        2,
-        13,
-        0,
-        0
-      ],
-      "endTrip": [
-        2021,
-        2,
-        15,
-        16,
-        56
-      ],
-      "destination": "San Francisco",
-      "meetings": [
-        {
-          "id": 1,
-          "title": "One Conference",
-          "description": "Key Note on One Conference"
-        },
-        {
-          "id": 2,
-          "title": "Zero Conference",
-          "description": "Workshop Zero on One Conference"
-        }
-      ]
+      "startTrip": [2021, 2, 13, 0, 0],
+      "endTrip": [2021, 2, 15, 16, 56],
+      "destination": "San Francisco"
     },
     {
       "id": 2,
       "title": "tag mit unserem senpai, Alain",
       "description": "Santa Clara Halley on new Server/IOT/Client",
-      "startTrip": [
-        2021,
-        6,
-        23,
-        9,
-        0
-      ],
-      "endTrip": [
-        2021,
-        6,
-        27,
-        16,
-        56
-      ],
-      "destination": "Santa Clara",
-      "meetings": [
-        {
-          "id": 3,
-          "title": "One Conference",
-          "description": "HandsOn on One Conference"
-        },
-        {
-          "id": 4,
-          "title": "One Conference",
-          "description": "Key Note on One Conference"
-        }
-      ]
+      "startTrip": [2021, 6, 23, 9, 0],
+      "endTrip": [2021, 6, 27, 16, 56],
+      "destination": "Santa Clara"
     },
     {
       "id": 3,
       "title": "Super fancy trip",
       "description": "San Cose City Halley on Docker/IOT/Client",
-      "startTrip": [
-        2021,
-        12,
-        13,
-        9,
-        0
-      ],
-      "endTrip": [
-        2021,
-        12,
-        15,
-        16,
-        56
-      ],
-      "destination": "San Cose City",
-      "meetings": [
-        {
-          "id": 5,
-          "title": "One Conference",
-          "description": "Key Note on One Conference"
-        }
-      ]
+      "startTrip": [2021, 12, 13, 9, 0],
+      "endTrip": [2021, 12, 15, 16, 56],
+      "destination": "San Cose City"
     },
     {
       "id": 4,
       "title": "Jasse mit em Ueli",
       "description": "(nur wenn er luscht het)",
-      "startTrip": [
-        2021,
-        12,
-        13,
-        9,
-        0
-      ],
-      "endTrip": [
-        2021,
-        12,
-        15,
-        16,
-        56
-      ],
-      "destinaton": "Wernetshausen",
-      "meetings": [
-        {
-          "id": 5,
-          "title": "Ueli Mueli taim",
-          "description": "Mueli Ueli"
-        }
-      ]
+      "startTrip": [2021, 12, 13, 9, 0],
+      "endTrip": [2021, 12, 15, 16, 56],
+      "destinaton": "Wernetshausen"
     },
     {
       "id": 5,
       "title": "Management Seminar",
       "description": "",
-      "startTrip": [
-        2021,
-        2,
-        13,
-        9,
-        0
-      ],
-      "endTrip": [
-        2021,
-        2,
-        15,
-        16,
-        56
-      ],
-      "destinaton": "Chur",
-      "meetings": [
-        {
-          "id": 6,
-          "title": "Wenn de Beamer braikes daun, wat du you du?",
-          "description": "A intesting presentation about the 7 zinking steps"
-        }
-      ]
+      "startTrip": [2021, 2, 13, 9, 0],
+      "endTrip": [2021, 2, 15, 16, 56],
+      "destinaton": "Chur"
+    },
+    {
+      "title": "TEST01",
+      "description": "blablabla",
+      "startTrip": "2022-01-27T16:42",
+      "endTrip": "2022-01-30T16:45",
+      "destination": "Zurich",
+      "id": 6
     }
   ],
   "wishlist": [

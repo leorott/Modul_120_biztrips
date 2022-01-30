@@ -77,11 +77,24 @@ export default function Trips() {
         }
     }
 
+    function deleteTrip(trip){
+        return fetch(baseUrl + "trips", {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json"},
+            body: [JSON.stringify({
+                title: trip.title,
+                description: trip.description,
+                startTrip: trip.startTrip,
+                endTrip: trip.endTrip,
+                destination: trip.destination
+            })],
+        });
+    }
     function renderTrip(trip) {
         return (
             <div className="col" key={trip.id}>
                 <div className="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style={{backgroundImage: `url(images/items/${trip.id}.jpg)`, backgroundRepeat: 'no-repeat'}}>
-                    <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div className="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{trip.title}</h2>
                         <ul className="d-flex list-unstyled mt-auto">
                             <li className="d-flex align-items-center me-3">
@@ -94,6 +107,9 @@ export default function Trips() {
                             <li className="d-flex align-items-center me-3">
                                 <Link to={`/trips/${trip.id}`} className="btn btn-primary">Show Details</Link>
                             </li>
+                            <li className="btn btn-dark" onClick={() => deleteTrip(trip)}>
+                                <Icon.Trash size={20}/>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -105,24 +121,31 @@ export default function Trips() {
             <div>
                 <main>
                     <section id="filters">
-                        <div className="container">
-                            <label htmlFor="month">Filter by Month</label>
-                            <select id="month"
-                                    value={filterByMonth}
-                                    onChange={(e) => {
-                                        setFilterByMonth(e.target.value);
-                                    }}
-                            >
-                                <option value="">All Months</option>
-                                <option value="1">January</option>
-                                <option value="2">February</option>
-                                <option value="3">March</option>
-                                <option value="4">April</option>
-                                <option value="5">Mai</option>
-                                <option value="6">June</option>
-                            </select>
-                            <label htmlFor="filterWishlist">Wishlist</label>
-                            <input type={"checkbox"} id={"filterWishlist"} onChange={(e) => {setFilterByWishlist(e.target.checked);}}/>
+                        <div className="container" >
+                            <div className="btn btn-outline-dark">
+                                <label htmlFor="month" className="filter">Filter by Month</label>
+                                <select id="month"
+                                        value={filterByMonth}
+                                        onChange={(e) => {
+                                            setFilterByMonth(e.target.value);
+                                        }}
+                                >
+                                    <option value="">All Months</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">Mai</option>
+                                    <option value="6">June</option>
+                                </select>
+                            </div>
+                            <div className="btn btn-outline-dark">
+                                <label htmlFor="filterWishlist" className="filter">Wishlist</label>
+                                <input type={"checkbox"} id={"filterWishlist"} onChange={(e) => {setFilterByWishlist(e.target.checked);}}/>
+                            </div>
+
+                            <Link to={'/add-trip'} className="btn btn-outline-dark">Add Trip</Link>
+
                         </div>
                     </section>
                     <section id="products">

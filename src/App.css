@@ -57,7 +57,7 @@ header li {
 }
 
 #detail img {
-  max-height: 400;
+  max-height: 400px;
 }
 
 #price {
@@ -221,4 +221,16 @@ form > div {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.filter{
+  padding: 0 30px 0 0;
+}
+
+section {
+  margin-bottom: 10px;
+}
+
+.btn-outline-dark {
+  margin-right: 10px;
 }
