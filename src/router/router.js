@@ -1,8 +1,8 @@
 import {Route, Routes} from "react-router-dom";
 import About from "../Components/About";
-import Trips from "../Components/Trips/Trips";
+import Trips from "../Components/Trips";
 import Home from "../Components/Home";
-import TripDetailsPage from "../Components/Trips/TripDetailsPage";
+import TripDetailsPage from "../Components/TripDetailsPage";
 import AddTrip from "../Components/AddTrip";
 
 const Router = () => {

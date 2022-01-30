@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import Spinner from "../Spinner";
-import useFetch from "../../services/useFetch";
+import Spinner from "./Spinner";
+import useFetch from "../services/useFetch";
 import * as Icon from 'react-bootstrap-icons';
 import {Link} from "react-router-dom";
 
@@ -54,17 +54,14 @@ export default function Trips() {
     // shorthand for react fragment
 
     async function updateWishlist(trip) {
-        console.log('here')
         if (wishlistArray.includes(trip.id)) {
-            console.log('delete')
-            return fetch(baseUrl + `wishlist/${trip.id}`, {
+            await fetch(baseUrl + `wishlist/${trip.id}`, {
                 method: "DELETE",
                 headers: {"Content-Type": "application/json"},
             });
         }
-    else {
-        console.log('create')
-            return fetch(baseUrl + "wishlist", {
+        else {
+            await fetch(baseUrl + "wishlist", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: [JSON.stringify({

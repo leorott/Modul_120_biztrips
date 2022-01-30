@@ -1,6 +1,6 @@
 import React from "react";
-import Spinner from "../Spinner";
-import useFetch from "../../services/useFetch";
+import Spinner from "./Spinner";
+import useFetch from "../services/useFetch";
 import {useParams} from "react-router-dom";
 
 export default function TripDetailsPage(){
