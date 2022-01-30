@@ -57,12 +57,9 @@ export default function Trips() {
         console.log('here')
         if (wishlistArray.includes(trip.id)) {
             console.log('delete')
-            return fetch(baseUrl + "wishlist", {
+            return fetch(baseUrl + `wishlist/${trip.id}`, {
                 method: "DELETE",
                 headers: {"Content-Type": "application/json"},
-                body: [JSON.stringify({
-                    tripId: trip.id
-                })],
             });
         }
     else {
@@ -78,16 +75,9 @@ export default function Trips() {
     }
 
     function deleteTrip(trip){
-        return fetch(baseUrl + "trips", {
+        return fetch(baseUrl + `trips/${trip.id}`, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
-            body: [JSON.stringify({
-                title: trip.title,
-                description: trip.description,
-                startTrip: trip.startTrip,
-                endTrip: trip.endTrip,
-                destination: trip.destination
-            })],
         });
     }
     function renderTrip(trip) {
