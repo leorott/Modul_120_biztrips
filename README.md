@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Modul_120_biztrips
 =======
 ## Quick Start
