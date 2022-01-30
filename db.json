@@ -4,59 +4,107 @@
       "id": 1,
       "title": "World Trade Center",
       "description": "San Francisco World Trade Center on new Server/IOT/Client ",
-      "startTrip": [2021, 2, 13, 0, 0],
-      "endTrip": [2021, 2, 15, 16, 56],
+      "startTrip": [
+        2021,
+        2,
+        13,
+        0,
+        0
+      ],
+      "endTrip": [
+        2021,
+        2,
+        15,
+        16,
+        56
+      ],
       "destination": "San Francisco"
     },
     {
       "id": 2,
-      "title": "tag mit unserem senpai, Alain",
+      "title": "BizTrip to Santa Clara",
       "description": "Santa Clara Halley on new Server/IOT/Client",
-      "startTrip": [2021, 6, 23, 9, 0],
-      "endTrip": [2021, 6, 27, 16, 56],
+      "startTrip": [
+        2021,
+        6,
+        23,
+        9,
+        0
+      ],
+      "endTrip": [
+        2021,
+        6,
+        27,
+        16,
+        56
+      ],
       "destination": "Santa Clara"
     },
     {
       "id": 3,
       "title": "Super fancy trip",
       "description": "San Cose City Halley on Docker/IOT/Client",
-      "startTrip": [2021, 12, 13, 9, 0],
-      "endTrip": [2021, 12, 15, 16, 56],
+      "startTrip": [
+        2021,
+        12,
+        13,
+        9,
+        0
+      ],
+      "endTrip": [
+        2021,
+        12,
+        15,
+        16,
+        56
+      ],
       "destination": "San Cose City"
     },
     {
       "id": 4,
-      "title": "Jasse mit em Ueli",
-      "description": "(nur wenn er luscht het)",
-      "startTrip": [2021, 12, 13, 9, 0],
-      "endTrip": [2021, 12, 15, 16, 56],
-      "destinaton": "Wernetshausen"
+      "title": "Investment Trip",
+      "description": "This is a super fancy description",
+      "startTrip": [
+        2021,
+        12,
+        13,
+        9,
+        0
+      ],
+      "endTrip": [
+        2021,
+        12,
+        15,
+        16,
+        56
+      ],
+      "destinaton": "Zurich"
     },
     {
       "id": 5,
-      "title": "Management Seminar",
-      "description": "",
-      "startTrip": [2021, 2, 13, 9, 0],
-      "endTrip": [2021, 2, 15, 16, 56],
-      "destinaton": "Chur"
-    },
-    {
-      "title": "TEST01",
-      "description": "blablabla",
-      "startTrip": "2022-01-27T16:42",
-      "endTrip": "2022-01-30T16:45",
-      "destination": "Zurich",
-      "id": 6
+      "title": "Management-Seminar",
+      "description": "When de Beamer braiks daun wat do you do",
+      "startTrip": [
+        2021,
+        2,
+        13,
+        9,
+        0
+      ],
+      "endTrip": [
+        2021,
+        2,
+        15,
+        16,
+        56
+      ],
+      "destinaton": "EMS-Chemie, Chur"
     }
   ],
   "wishlist": [
     {
       "tripId": 1,
       "id": 1
-    },
-    {
-      "tripId": 2,
-      "id": 2
     }
   ]
 }
