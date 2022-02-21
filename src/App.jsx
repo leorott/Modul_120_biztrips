@@ -11,6 +11,7 @@ export default function App() {
     <>
       <BrowserRouter>
         <Header/>
+            uwu
         <Router />
         </BrowserRouter>
         <Footer/>
