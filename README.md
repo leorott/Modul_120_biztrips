@@ -1,5 +1,4 @@
 # Modul_120_biztrips
-=======
 ## Quick Start
 
 Run the following commands:
